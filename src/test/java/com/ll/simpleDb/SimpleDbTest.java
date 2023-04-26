@@ -53,10 +53,10 @@ public class SimpleDbTest {
                     INSERT INTO article
                     SET createdDate = NOW(),
                     modifiedDate = NOW(),
-                    title = '%s',
-                    `body` = '%s',
-                    isBlind = %s
-                    """.formatted(title, body, isBlind));
+                    title = ?,
+                    `body` = ?,
+                    isBlind = ?
+                    """, title, body, isBlind);
         });
     }
 
