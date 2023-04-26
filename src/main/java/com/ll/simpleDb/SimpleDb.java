@@ -25,9 +25,14 @@ public class SimpleDb {
     }
 
     public void run(String sql) {
+        System.out.println("== rawSql ==");
+        System.out.println(sql);
+        System.out.println();
+
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
